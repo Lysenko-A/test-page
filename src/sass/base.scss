@@ -1,0 +1,228 @@
+.wrap_hexagon {
+  padding: 60px 0;
+}
+.part {
+  width: 320px;
+  height: 280px;
+  position: absolute;
+  z-index: 10;
+  perspective: 500px;
+  bottom: 134px;
+  &:nth-child(4) {
+    transform: rotate(60deg) translate(-120px, 70px);
+    .top .text {
+      transform: translate(-50%) rotate(180deg);
+    }
+    .bottom .text {
+      transform: rotate(-60deg);
+    }
+  }
+  &:nth-child(6) {
+    transform: rotate(120deg) translate(-120px, 208px);
+    .top .text {
+      transform: translate(-50%) rotate(180deg);
+    }
+    .bottom .text {
+      transform: rotate(240deg);
+    }
+  }
+  &:nth-child(8) {
+    transform: rotate(180deg) translate(0px, 277px);
+    .top .text {
+      transform: translate(-50%) rotate(180deg);
+    }
+    .bottom .text {
+      transform: rotate(180deg);
+    }
+  }
+  &:nth-child(10) {
+    transform: rotate(-120deg) translate(120px, 208px);
+    .top .text {
+      transform: translate(-50%) rotate(180deg);
+    }
+    .bottom .text {
+      transform: rotate(120deg);
+    }
+  }
+  &:nth-child(12) {
+    transform: rotate(-60deg) translate(120px, 70px);
+    .top .text {
+      transform: translate(-50%) rotate(180deg);
+    }
+    .bottom .text {
+      transform: rotate(60deg);
+    }
+  }
+}
+.part-cover {
+  background: transparent;
+  cursor: pointer;
+  height: 277px;
+  left: 50%;
+  overflow: hidden;
+  position: absolute;
+  top: 53%;
+  transform-origin: 0 0 0;
+  width: 320px;
+  z-index: 100;
+  transform: rotate(60deg) skewX(30deg);
+  &:nth-child(3) {
+    transform: rotate(120deg) translate(0 ,25px) skewX(30deg);
+  }
+  &:nth-child(5) {
+    transform: rotate(180deg) translate(24px, 37px) skewX(30deg);
+  }
+  &:nth-child(7) {
+    transform: rotate(-120deg) translate(45px,26px) skewX(30deg)
+  }
+  &:nth-child(9) {
+    transform: rotate(-60deg) translate(44px,1px) skewX(30deg);
+  }
+  &:nth-child(11) {
+    transform: rotate(0) translate(22px,-11px) skewX(30deg);
+  }
+  &.show {
+    z-index: 300;
+  }
+}
+.top {
+  position: absolute;
+  width: 320px;
+  height: 277px;
+  z-index: 20;
+  bottom: 0;
+  color: red;
+  transform-style: preserve-3d;
+  overflow: hidden;
+  transition: all 1s;
+  transform-origin: -50% bottom  0;
+  font-size: 30px;
+  transform: scaleY(0.9);
+  .front {
+    position: absolute;
+    z-index: 30;
+    top: -50%;
+    left: 25%;
+    width: 320px;
+    height: 277px;
+    overflow: hidden;
+    transform: rotate(60deg) skewX(30deg);
+    transform-origin: -50% bottom  0;
+    background: #eee;
+    cursor: pointer;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 25%;
+      left: 25%;
+      box-sizing: border-box;
+      width: 320px;
+      height: 277.12813px;
+      background: #eee;
+      transform: skewX(-30deg) rotate(-60deg) translateY(-100%);
+    }
+  }
+  .text {
+    position: absolute;
+    left: 50%;
+    top: 75%;
+    transform: translate(-50%);
+    width: 100%;
+    z-index: 40;
+    text-align: center;
+  }
+}
+.bottom {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 161px 280px;
+  border-color: transparent transparent #808080 transparent;
+  .text {
+    max-width: 160px;
+    color: #fff;
+    font-size: 20px;
+    position: absolute;
+    left: 25%;
+    top: 54%;
+    text-align: center;
+  }
+}
+.top.show {
+  transform: rotateX(-120deg) scaleY(0.5);
+  font-size: 35px;
+
+}
+
+
+////////////////////////////////////////
+.gif {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 560px;
+  width: 645px;
+  margin: 0 auto;
+  z-index: 0;
+  position: relative;
+  padding: 133px 38px;
+  overflow: hidden;
+}
+.overflow--top {
+  position: absolute;
+  top: 0;
+  height: 133px;
+  width: 100%;
+  z-index: 200;
+  &:before {
+    background: transparent;
+    content: "";
+    height: 200px;
+    left: -130px;
+    position: absolute;
+    top: 120px;
+    transform: rotate(-60deg);
+    width: 330px;
+    z-index: 200;
+  }
+  &:after {
+    background: transparent;
+    content: "";
+    height: 200px;
+    right: -130px;
+    position: absolute;
+    top: 120px;
+    transform: rotate(60deg);
+    width: 330px;
+    z-index: 200;
+  }
+}
+.overflow--bottom {
+  position: absolute;
+  bottom: 0;
+  height: 133px;
+  width: 100%;
+  z-index: 200;
+  &:before {
+    background: transparent;
+    content: "";
+    height: 200px;
+    right: -130px;
+    position: absolute;
+    bottom: 120px;
+    transform: rotate(-60deg);
+    width: 330px;
+    z-index: 200;
+  }
+  &:after {
+    background: transparent;
+    content: "";
+    height: 200px;
+    left: -130px;
+    position: absolute;
+    bottom: 120px;
+    transform: rotate(60deg);
+    width: 330px;
+    z-index: 200;
+  }
+}

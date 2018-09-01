@@ -1,4 +1,17 @@
-import "../sass/base.sass";
+import "../sass/base.scss";
 
-require('./modules/common');
-require('./modules/wowjs');
+$('.part-cover').click(function() {
+
+    let $this = $(this);
+    let triangle = $this.next().find('.top');
+    let Alltriangle = $('.top');
+
+    if( !triangle.hasClass("show") ) {
+        Alltriangle.removeClass('show');
+        $this.removeClass('show');
+    }
+
+    triangle.toggleClass("show");
+    $this.toggleClass("show");
+
+});
