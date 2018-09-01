@@ -109,11 +109,11 @@ module.exports = {
     }),
     new ExtractTextPlugin({filename: 'css/style.min.css', allChunks: false}),
     new webpack.optimize.UglifyJsPlugin({sourceMap: false, minimize: true}),
-    new CopyWebpackPlugin([
-      {
-        from: 'images/',
-        to: 'images/'
-      }
-    ])
+    // new CopyWebpackPlugin([
+    //   {
+    //     from: 'images/',
+    //     to: 'images/'
+    //   }
+    // ])
   ]
 }
